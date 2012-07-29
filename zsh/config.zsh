@@ -4,7 +4,14 @@ else
   export PS1='%3~$(git_info_for_prompt)%# '
 fi
 
-export LSCOLORS="exfxcxdxbxegedabagacad"
+if which gdircolors > /dev/null
+then
+    eval "$(gdircolors -b "$HOME/.dircolors")"
+    alias ls="gls --color=auto"
+else
+    export LSCOLORS="exfxcxdxbxegedabagacad"
+fi
+
 export CLICOLOR=true
 
 fpath=($ZSH/zsh/functions $fpath)
