@@ -1,0 +1,2 @@
+path=(/usr/local/sbin /usr/local/bin $path)
+manpath=(/usr/local/share/man $manpath)

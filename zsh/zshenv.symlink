@@ -1,0 +1,12 @@
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export ZSH=$HOME/.dotfiles
+
+# source every .zsh-env file in this rep
+for config_file ($ZSH/**/*.zsh-env) source $config_file
+
+path=($HOME/opt/bin $path)
+
+export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
+
+export JRUBY_OPTS="$JRUBY_OPTS --1.9 -J-d32 -J-XX:+UseConcMarkSweepGC"
