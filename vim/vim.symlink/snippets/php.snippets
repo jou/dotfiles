@@ -1,0 +1,17 @@
+snippet test
+	public function test${1:TestName}(${2})
+	{
+		${3:// code...}
+	}
+snippet testprov
+	public function ${1:name}Provider()
+	{
+		return array(
+			array(${2}),
+		);
+	}
+snippet arr
+	array(${1})
+
+snippet ifndef
+	if( !defined( '${1:CONST}' ) ) { define( '$1', ${2:null} ); }${3}

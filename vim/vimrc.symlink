@@ -1,0 +1,58 @@
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+syntax on
+
+set nocompatible
+
+set ls=2
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+set scrolloff=3
+
+set showcmd
+
+set title
+set ttyfast
+
+set modeline
+set modelines=3
+
+set incsearch
+
+set cursorline
+
+filetype plugin on
+filetype plugin indent on
+
+if filereadable($HOME."/.vim/vimrc/vimrc-local.vim")
+    source ~/.vim/vimrc/vimrc-local.vim
+endif
+
+set nofoldenable
+let php_folding = 1
+
+" SuperTab settigns
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionTypeDiscovery = [
+\ "&completefunc:<c-x><c-u>",
+\ "&omnifunc:<c-x><c-o>",
+\ ]
+let g:SuperTabLongestHighlight = 1
+
+" Eclim settings
+" 'open' on OSX will open the url in the default browser without issue
+let g:EclimBrowser='open'
+let g:EclimSignLevel = 2
+
+" Tagbar settings
+map <leader>g :TagbarToggle<CR>
+let g:tagbar_type_javascript = {
+    \ 'ctagsbin' : 'jsctags'
+    \ }
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
