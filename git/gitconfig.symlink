@@ -4,9 +4,11 @@
 
 [hub]
         protocol = https
+[github]
+        user = jou
 [user]
-        name = Zach Holman
-        email = zach@zachholman.com
+        name = Jiayong Ou
+        email = jou@orly.ch
 [credential]
         helper = osxkeychain
 [alias]

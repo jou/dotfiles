@@ -1,5 +1,8 @@
 .DS_Store
-.svn
+._*
 *~
-*.swp
-*.rbc
+*.sw?
+.buildpath
+.project
+.settings
+.svn
