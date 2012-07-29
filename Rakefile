@@ -1,5 +1,9 @@
 require 'rake'
 
+Dir[File.expand_path('../_tasks/*.rake', __FILE__)].each do |tasks|
+  load tasks
+end
+
 desc "Hook our dotfiles into system-standard positions."
 task :install do
   linkables = Dir.glob('*/**{.symlink}')
