@@ -4,14 +4,7 @@ else
   export PS1='%3~$(git_info_for_prompt)%# '
 fi
 
-if which gdircolors > /dev/null
-then
-    eval "$(gdircolors -b "$HOME/.dircolors")"
-    alias ls="gls --color=auto"
-else
-    export LSCOLORS="exfxcxdxbxegedabagacad"
-fi
-
+export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
 fpath=($ZSH/zsh/functions $fpath)
@@ -43,6 +36,10 @@ setopt HIST_REDUCE_BLANKS
 # don't expand aliases _before_ completion has finished
 #   like: git comm-[tab]
 setopt complete_aliases
+
+setopt appendhistory 
+setopt autocd
+setopt extendedglob
 
 zle -N newtab
 

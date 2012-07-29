@@ -1,0 +1,12 @@
+_run-dircolors () {
+    if which dircolors > /dev/null; then
+        dircolors "$@"
+    elif which gdircolors > /dev/null; then
+        gdircolors "$@"
+    fi
+}
+
+if which gdircolors > /dev/null
+then
+    eval "$(_run-dircolors -b "$HOME/.dircolors")"
+fi
