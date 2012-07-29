@@ -4,6 +4,9 @@ export ZSH=$HOME/.dotfiles
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/dev
 
+# source every .zsh-preconf file in this rep
+for config_file ($ZSH/**/*.zsh-preconf) source $config_file
+
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file
 
