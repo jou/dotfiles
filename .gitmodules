@@ -64,3 +64,6 @@
 [submodule "vim/vim.symlink/bundle/fuzzyfinder_textmate"]
 	path = vim/vim.symlink/bundle/fuzzyfinder_textmate
 	url = git://github.com/sethbc/fuzzyfinder_textmate.git
+[submodule "zsh-completions/all"]
+	path = zsh-completions/all
+	url = git://github.com/zsh-users/zsh-completions.git
