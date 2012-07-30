@@ -31,6 +31,32 @@ class Object
   end
 end
 
+module ::JouIrb
+  module Pasteboard
+    def pbcopy(s)
+      s.tap do |str|
+        Open3.popen3('pbcopy') do |stdin, stdout, stderr, wait_thr|
+          stdin.print s
+        end
+      end
+    end
+
+    def pbpaste
+      `pbpaste`
+    end
+  end
+end
+extend JouIrb::Pasteboard
+
+class String
+  class <<self
+    include ::JouIrb::Pasteboard
+  end
+  def pbcopy
+    self.class.pbcopy(self)
+  end
+end
+
 def r
   reload!
 end
