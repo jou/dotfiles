@@ -7,6 +7,9 @@
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
 # Use AirDrop over every interface. srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
