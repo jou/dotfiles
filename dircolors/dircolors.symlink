@@ -132,6 +132,7 @@ EXEC 01;32
 .cpio 01;31
 .7z 01;31
 .rz 01;31
+.dmg 01;31
 # image formats
 .jpg 01;35
 .jpeg 01;35
@@ -200,3 +201,27 @@ EXEC 01;32
 .oga 00;36
 .spx 00;36
 .xspf 00;36
+# source code files
+.pl 00;33
+.PL 00;33
+.pm 00;33
+.tt 00;33
+.yml 00;33
+.yaml 00;33
+.sql 00;33
+.xml 00;33
+.html 00;33
+.haml 00;33
+.css 00;33
+.scss 00;33
+.sass 00;33
+.js 00;33
+.coffee 00;33
+.rb 00;33
+.ru 00;33
+.erb 00;33
+.py 00;33
+.php 00;33
+# config files
+.conf 00;37
+.ini 00;37
