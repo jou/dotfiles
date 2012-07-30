@@ -1,0 +1,26 @@
+--type-set
+ezt=.ezt
+
+--type-set
+scss=.scss
+
+--type-set
+sass=.sass
+
+--type-set
+haml=.haml
+
+--type-set
+coffee=.coffee
+
+--type-set
+zsh=.zsh
+
+--type-add
+ruby=.ru
+
+--type-add
+ruby=.rake
+
+--pager
+/usr/bin/less -R
