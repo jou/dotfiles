@@ -1,0 +1,3 @@
+if [ -f $HOME/.python-envs/default/bin/activate ]; then
+    source $HOME/.python-envs/default/bin/activate
+fi
