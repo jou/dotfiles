@@ -2,8 +2,6 @@
 #
 # You probably want to change the [user] section here since you are not me.
 
-[hub]
-    protocol = https
 [github]
     user = jou
 [user]
