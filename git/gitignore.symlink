@@ -2,6 +2,7 @@
 ._*
 *~
 *.sw?
+*.sublime-workspace
 .buildpath
 .project
 .settings
