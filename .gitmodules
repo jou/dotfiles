@@ -90,3 +90,6 @@
 	path = zsh-completions/all
 	url = git://github.com/zsh-users/zsh-completions.git
     ignore = untracked
+[submodule "private"]
+	path = private
+	url = git@bitbucket.org:jou/dotfiles-private.git
