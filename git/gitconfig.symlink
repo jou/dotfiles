@@ -3,33 +3,44 @@
 # You probably want to change the [user] section here since you are not me.
 
 [hub]
-        protocol = https
+    protocol = https
 [github]
-        user = jou
+    user = jou
 [user]
-        name = Jiayong Ou
-        email = jou@orly.ch
+    name = Jiayong Ou
+    email = jou@orly.ch
 [credential]
-        helper = osxkeychain
+    helper = osxkeychain
 [alias]
-        co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributers = !$ZSH/bin/git-rank-contributers
-        count   = !git shortlog -sn
+    promote = !$ZSH/bin/git-promote
+    wtf     = !$ZSH/bin/git-wtf
+    rank-contributers = !$ZSH/bin/git-rank-contributers
+    count   = !git shortlog -sn
+    co = checkout
+    ci = commit
+    st = status
+	s = stash
+	sa = stash apply
+	sp = stash pop
+	br = branch
+	bra = branch -a
+	pbr = "!sh -c 'export BRANCH=`git branch | grep \"^\\*\" | awk \"{print \\\\$2}\"`; git push origin $BRANCH:refs/heads/$BRANCH'"
+	serve = daemon --reuseaddr --base-path=. --export-all --verbose
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
+    excludesfile = ~/.gitignore
+    editor = vim
 [apply]
-        whitespace = nowarn
+    whitespace = nowarn
+[merge]
+	tool = opendiff
 [mergetool]
-        keepBackup = false
+    keepBackup = false
 [difftool]
-        prompt = false
-[help]
-        autocorrect = 1
+    prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
