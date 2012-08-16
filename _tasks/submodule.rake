@@ -4,5 +4,3 @@ task :submodules do
   system 'git', 'submodule', 'init'
   system 'git', 'submodule', 'update'
 end
-
-task :install => :submodules
