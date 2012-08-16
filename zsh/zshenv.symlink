@@ -1,6 +1,7 @@
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-export ZSH=$HOME/.dotfiles
+export DOTFILES=$HOME/.dotfiles
+export ZSH=$DOTFILES
 
 # source every .zsh-env file in this rep
 for config_file ($ZSH/**/*.zsh-env) source $config_file
