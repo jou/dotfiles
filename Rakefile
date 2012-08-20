@@ -59,4 +59,8 @@ task :uninstall do
   end
 end
 
+desc "Do everything that can be safely run after pulls"
 task :default => 'install'
+
+desc "Do everything"
+task :all => 'default'
