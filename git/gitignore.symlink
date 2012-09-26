@@ -3,6 +3,7 @@
 *~
 *.sw?
 *.sublime-workspace
+*.sublime-project
 .buildpath
 .project
 .settings
