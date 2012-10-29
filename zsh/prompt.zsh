@@ -7,6 +7,10 @@ git_branch() {
 }
 
 git_dirty() {
+  if [ ! -z "$DISABLE_GIT_PROMPT" ]; then
+    echo ""
+    exit
+  fi
   st=$(command git status 2>/dev/null | tail -n 1)
   if [[ $st == "" ]]
   then
@@ -32,6 +36,11 @@ unpushed () {
 }
 
 need_push () {
+  if [ ! -z "$DISABLE_GIT_PROMPT" ]; then
+    echo ""
+    exit
+  fi
+  
   if [[ $(unpushed) == "" ]]
   then
     echo " "
