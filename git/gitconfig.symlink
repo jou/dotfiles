@@ -5,8 +5,8 @@
 [github]
     user = jou
 [user]
-    name = Jiayong Ou
-    email = jou@orly.ch
+	name = Jiayong Ou
+	email = jou@orly.ch
 [credential]
     helper = osxkeychain
 [alias]
@@ -24,6 +24,7 @@
 	bra = branch -a
 	pbr = "!sh -c 'export BRANCH=`git branch | grep \"^\\*\" | awk \"{print \\\\$2}\"`; git push origin $BRANCH:refs/heads/$BRANCH'"
 	serve = daemon --reuseaddr --base-path=. --export-all --verbose
+	ksreview = "!f() { local SHA=${1:-HEAD}; local BRANCH=${2:-master}; if [ $SHA == $BRANCH ]; then SHA=HEAD; fi; git difftool -y -t Kaleidoscope $BRANCH...$SHA; }; f"
 [color]
     diff = auto
     status = auto
@@ -34,11 +35,22 @@
 	editor = vim
 [apply]
     whitespace = nowarn
-[merge]
-	tool = opendiff
-[mergetool]
-    keepBackup = false
-[difftool]
-    prompt = false
+[difftool "sourcetree"]
+	cmd = /Applications/Changes.app/Contents/Resources/chdiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	trustExitCode = true
 [difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[merge]
+	tool = Kaleidoscope
