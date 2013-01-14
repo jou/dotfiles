@@ -30,7 +30,8 @@
     branch = auto
     ui = true
 [core]
-    excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
+	editor = vim
 [apply]
     whitespace = nowarn
 [merge]
