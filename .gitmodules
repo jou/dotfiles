@@ -93,3 +93,9 @@
 [submodule "private"]
 	path = private
 	url = git@bitbucket.org:jou/dotfiles-private.git
+[submodule "sublime3/Packages/eZ-Publish-Syntax"]
+	path = sublime3/Packages/eZ-Publish-Syntax
+	url = git://github.com/SirReal/eZ-Publish-Syntax.git
+[submodule "sublime3/Packages/Sass"]
+	path = sublime3/Packages/Sass
+	url = git://github.com/nathos/sass-textmate-bundle.git
