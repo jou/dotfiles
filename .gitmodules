@@ -99,3 +99,6 @@
 [submodule "sublime3/Packages/Sass"]
 	path = sublime3/Packages/Sass
 	url = git://github.com/nathos/sass-textmate-bundle.git
+[submodule "sublime3/Packages/Git"]
+	path = sublime3/Packages/Git
+	url = git://github.com/kemayo/sublime-text-2-git.git
