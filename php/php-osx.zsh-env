@@ -1,0 +1,3 @@
+if [ -d /usr/local/php5/bin ]; then
+    path=(/usr/local/php5/bin $path)
+fi
