@@ -102,3 +102,9 @@
 [submodule "sublime3/Packages/Git"]
 	path = sublime3/Packages/Git
 	url = git://github.com/kemayo/sublime-text-2-git.git
+[submodule "sublime3/Packages/Puppet"]
+	path = sublime3/Packages/Puppet
+	url = git://github.com/russCloak/SublimePuppet.git
+[submodule "sublime3/Packages/CoffeeScript"]
+	path = sublime3/Packages/CoffeeScript
+	url = git://github.com/Xavura/CoffeeScript-Sublime-Plugin.git
