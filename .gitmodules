@@ -108,3 +108,15 @@
 [submodule "sublime3/Packages/CoffeeScript"]
 	path = sublime3/Packages/CoffeeScript
 	url = git://github.com/Xavura/CoffeeScript-Sublime-Plugin.git
+[submodule "sublime3/Packages/Varnish"]
+	path = sublime3/Packages/Varnish
+	url = git://github.com/zephirworks/Varnish.tmbundle.git
+[submodule "sublime3/Packages/Twig"]
+	path = sublime3/Packages/Twig
+	url = git://github.com/Anomareh/PHP-Twig.tmbundle.git
+[submodule "sublime3/Packages/Nginx"]
+	path = sublime3/Packages/Nginx
+	url = git://github.com/kvs/ST2Nginx.git
+[submodule "sublime3/Packages/MarkdownEditing"]
+	path = sublime3/Packages/MarkdownEditing
+	url = git://github.com/ttscoff/MarkdownEditing.git
