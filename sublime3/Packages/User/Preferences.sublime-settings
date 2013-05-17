@@ -1,5 +1,6 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
+    "scroll_past_end": true,
 	"ignored_packages":
 	[
 	],

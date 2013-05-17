@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+<div style="font-size:12px; line-height: 12px;">
+    ${1:\{\$${2:var}|dump('show')\}}
+</div>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>debug_div</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.eztpl</scope>
+</snippet>
