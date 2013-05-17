@@ -1,0 +1,4 @@
+if [ -x /usr/libexec/java_home ]; then
+    JAVA_HOME="$(/usr/libexec/java_home)"
+fi
+
