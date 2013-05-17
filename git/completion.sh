@@ -3,7 +3,7 @@
 # tosses it, at least).
 completion=/usr/local/etc/bash_completion.d/git-completion.bash
 
-if test -f $completion
+if ! type _git >/dev/null 2>/dev/null && test -f $completion
 then
   source $completion
 fi
