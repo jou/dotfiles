@@ -1,0 +1,6 @@
+if [ -d "$HOME/opt/android-sdk" ]; then
+    export ANDROID_HOME="$HOME/opt/android-sdk"
+    export ANDROID_SDK_HOME="$ANDROID_HOME"
+
+    path=($ANDROID_HOME/tools $ANDROID_HOME/platform-tools $ANDROID_HOME/build-tools $path)
+fi
