@@ -1,10 +1,22 @@
+# Mac stuff
 .DS_Store
 ._*
 *~
 *.sw?
+
+# Sublime text
 *.sublime-workspace
 *.sublime-project
+
+# Eclipse
 .buildpath
 .project
 .settings
+
+# IntelliJ
+.idea
+.idea_modules
+*.iml
+
+.vagrant
 .svn
