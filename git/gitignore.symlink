@@ -20,3 +20,5 @@
 
 .vagrant
 .svn
+
+proguard_logs
