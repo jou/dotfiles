@@ -8,5 +8,6 @@
 	"show_full_path": true,
 	"translate_tabs_to_spaces": true,
 	"vintage_start_in_command_mode": true,
-	"vintage_use_clipboard": true
+	"vintage_use_clipboard": true,
+	"always_show_minimap_viewport": true
 }
