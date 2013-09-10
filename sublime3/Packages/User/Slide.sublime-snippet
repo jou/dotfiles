@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+slide <<-EOS, :${1:block}
+  ${0}
+EOS
+]]></content>
+	<tabTrigger>sl</tabTrigger>
+</snippet>

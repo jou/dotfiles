@@ -1,13 +1,16 @@
 {
+	"always_show_minimap_viewport": true,
+	"auto_match_enabled": false,
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
-    "scroll_past_end": true,
+	"dictionary": "Packages/Dictionaries/German_de_DE.dic",
+	"draw_white_space": "selection",
+	"font_size": 16,
 	"ignored_packages":
 	[
 	],
-    "auto_match_enabled" : false,
+	"scroll_past_end": true,
 	"show_full_path": true,
 	"translate_tabs_to_spaces": true,
 	"vintage_start_in_command_mode": true,
-	"vintage_use_clipboard": true,
-	"always_show_minimap_viewport": true
+	"vintage_use_clipboard": true
 }

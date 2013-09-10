@@ -3,7 +3,9 @@
 	[
 		"Vagrantfile",
 		"Guardfile",
-		"ru"
+		"ru",
+		"Podfile",
+		"podspec"
 	],
 	"tab_size": 2
 }
