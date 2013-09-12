@@ -77,8 +77,50 @@ todo(){
   fi
 }
 
+abbreviated_path () {
+  if [[ "$1" == "/" ]]; then
+    echo $1
+    return
+  fi
+
+  # Substitute $HOME at the beginning with ~
+  home_substituted=${1/#$HOME/"~"}
+  # Split path by slash
+  components=(${(s:/:)home_substituted})
+  # Variable holding the result
+  shortened_path=""
+
+  # Abbreviate all components except the last one
+  for component in $components[1,-2]; do
+    current_component=$component[1]
+    # Add an additional character if path component starts 
+    # with "." so hidden directories along the path makes
+    # more sense
+    if [[ $current_component == "." ]]; then
+      current_component="${current_component}${component[2]}"
+    fi
+
+    shortened_path="${shortened_path}${current_component}/"
+  done
+
+  # Add the last path component unchanged
+  shortened_path="${shortened_path}${components[-1]}/"
+
+  # Prefix with "/" if it's not in $HOME
+  if [[ ! "${components[1]}" == "~" ]]; then
+    shortened_path="/${shortened_path}"
+  fi
+
+  echo $shortened_path;
+}
+
+abbreviated_pwd () {
+  abbreviated_path $PWD
+}
+
 directory_name(){
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+  # Any "%" in $(abbreviated_pwd) must be escaped
+  echo "%{$fg_bold[cyan]%}${$(abbreviated_pwd)//\%/%%}%{$reset_color%}"
 }
 
 export PROMPT=$'\n$(rb_prompt) in $(directory_name) $(git_dirty)$(need_push)\n› '
