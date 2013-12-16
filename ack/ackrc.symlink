@@ -22,5 +22,11 @@ ruby=.ru
 --type-add
 ruby=.rake
 
+--type-add
+podspec=.podspec
+
+--type-add
+podfile=Podfile
+
 --pager
 /usr/bin/less -R
