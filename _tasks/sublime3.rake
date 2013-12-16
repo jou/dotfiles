@@ -1,3 +1,5 @@
+require 'pathname'
+
 namespace :sublime3 do
   sublime_data_dir = "#{ENV["HOME"]}/Library/Application Support/Sublime Text 3"
   sublime_package_dir = "#{sublime_data_dir}/Packages"
@@ -13,11 +15,11 @@ namespace :sublime3 do
     File.mkdir(sublime_package_dir) unless File.exists?(sublime_package_dir)
 
     Dir['sublime3/Packages/*'].each do |pkg_path|
-      source_dir = File.realpath(pkg_path)
+      source_dir = Pathname.new(pkg_path).realpath.to_s
       dest_dir = "#{sublime_package_dir}#{pkg_path.gsub(%r{^sublime3/Packages}, '')}"
 
       if File.exist?(dest_dir)
-        if File.realpath(dest_dir) == source_dir
+        if Pathname.new(dest_dir).realpath.to_s == source_dir
           # puts "'#{dest_dir}' is already pointing to '#{source_dir}'"
         else
           puts "'#{dest_dir}' already exists. Remove it and run `rake` again to relace it"
