@@ -132,3 +132,6 @@
 [submodule "sublime3/Packages/Solr"]
 	path = sublime3/Packages/Solr
 	url = git://github.com/jou/SublimeSolr.git
+[submodule "sublime3/Packages/protobuf"]
+	path = sublime3/Packages/protobuf
+	url = https://github.com/jrk/protobuf.sublime-package.git
