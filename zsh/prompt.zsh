@@ -58,25 +58,6 @@ rb_prompt(){
   fi
 }
 
-# This keeps the number of todos always available the right hand side of my
-# command line. I filter it to only count those tagged as "+next", so it's more
-# of a motivation to clear out the list.
-todo(){
-  if $(which todo.sh &> /dev/null)
-  then
-    num=$(echo $(todo.sh ls +next | wc -l))
-    let todos=num-2
-    if [ $todos != 0 ]
-    then
-      echo "$todos"
-    else
-      echo ""
-    fi
-  else
-    echo ""
-  fi
-}
-
 abbreviated_path () {
   if [[ "$1" == "/" ]]; then
     echo $1
@@ -104,7 +85,7 @@ abbreviated_path () {
   done
 
   # Add the last path component unchanged
-  shortened_path="${shortened_path}${components[-1]}/"
+  shortened_path="${shortened_path}${reset_color}${fg_bold[green]}${components[-1]}/"
 
   # Prefix with "/" if it's not in $HOME
   if [[ ! "${components[1]}" == "~" ]]; then
@@ -124,11 +105,7 @@ directory_name(){
 }
 
 export PROMPT=$'\n$(rb_prompt) in $(directory_name) $(git_dirty)$(need_push)\n› '
-set_prompt () {
-  export RPROMPT="%{$fg_bold[cyan]%}$(todo)%{$reset_color%}"
-}
 
 precmd() {
   title "zsh" "%m:%1/\/" "%55<...<%~"
-  set_prompt
 }
