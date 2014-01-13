@@ -135,3 +135,7 @@
 [submodule "sublime3/Packages/protobuf"]
 	path = sublime3/Packages/protobuf
 	url = https://github.com/jrk/protobuf.sublime-package.git
+[submodule "sublime3/Packages/Haskell"]
+	path = sublime3/Packages/SublimeHaskell
+	url = https://github.com/SublimeHaskell/SublimeHaskell.git
+    ignore = untracked

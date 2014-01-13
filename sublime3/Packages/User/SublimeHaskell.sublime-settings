@@ -1,0 +1,6 @@
+{
+	"enable_hdevtools": false,
+    "add_to_PATH": [
+        "/Users/jou/.cabal/bin"
+    ]
+}
