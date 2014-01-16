@@ -139,3 +139,6 @@
 	path = sublime3/Packages/SublimeHaskell
 	url = https://github.com/SublimeHaskell/SublimeHaskell.git
     ignore = untracked
+[submodule "sublime3/Packages/Stino"]
+	path = sublime3/Packages/Stino
+	url = https://github.com/Robot-Will/Stino.git
