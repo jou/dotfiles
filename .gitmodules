@@ -142,3 +142,6 @@
 [submodule "sublime3/Packages/Stino"]
 	path = sublime3/Packages/Stino
 	url = https://github.com/Robot-Will/Stino.git
+[submodule "sublime3/Packages/EditorConfig"]
+	path = sublime3/Packages/EditorConfig
+	url = https://github.com/sindresorhus/editorconfig-sublime.git
