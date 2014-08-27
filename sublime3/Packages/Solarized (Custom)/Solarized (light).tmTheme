@@ -520,6 +520,19 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>variable declaration</string>
+			<key>scope</key>
+			<string>variable.declaration</string>
+			<key>settings</key>
+            <dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+                <key>foreground</key>
+				<string>#268bd2</string><!-- blue -->
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>JS: Function Name</string>
 			<key>scope</key>
 			<string>meta.function.js, entity.name.function.js, support.function.dom.js</string>
