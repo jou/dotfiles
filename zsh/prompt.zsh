@@ -58,11 +58,15 @@ rb_prompt(){
   fi
 }
 
+# $1: Path
+# $2: color of last component
 abbreviated_path () {
   if [[ "$1" == "/" ]]; then
     echo $1
     return
   fi
+
+  last_component_color=$2
 
   # Substitute $HOME at the beginning with ~
   home_substituted=${1/#$HOME/"~"}
@@ -85,7 +89,7 @@ abbreviated_path () {
   done
 
   # Add the last path component unchanged
-  shortened_path="${shortened_path}${reset_color}${fg_bold[green]}${components[-1]}/"
+  shortened_path="${shortened_path}${last_component_color}${components[-1]}/"
 
   # Prefix with "/" if it's not in $HOME
   if [[ ! "${components[1]}" == "~" ]]; then
@@ -95,17 +99,50 @@ abbreviated_path () {
   echo $shortened_path;
 }
 
+# $1: color of last component
 abbreviated_pwd () {
-  abbreviated_path $PWD
+  abbreviated_path $PWD $1
 }
 
 directory_name(){
-  # Any "%" in $(abbreviated_pwd) must be escaped
-  echo "%{$fg_bold[cyan]%}${$(abbreviated_pwd)//\%/%%}%{$reset_color%}"
+  prompt_pwd="$(abbreviated_pwd "${reset_color}${fg_bold[green]}")"
+  # Any "%" in $prompt_pwd must be escaped
+  echo "%{$fg_bold[cyan]%}${prompt_pwd//\%/%%}%{$reset_color%}"
+}
+
+last_path_component() {
+  # Split path by slash
+  components=(${(s:/:)1})
+  echo $components[-1]
 }
 
 export PROMPT=$'\n$(rb_prompt) in $(directory_name) $(git_dirty)$(need_push)\n› '
 
-precmd() {
-  title "zsh" "%m:%1/\/" "%55<...<%~"
+# precmd() {
+#   title "zsh" "%m:%1/\/" "%55<...<%~"
+# }
+
+JOU_MANUAL_TITLE=""
+
+set_title() {
+  JOU_MANUAL_TITLE="$1"
+  print_title
 }
+
+print_title() {
+  local short_pwd
+  if [ -n "$JOU_MANUAL_TITLE" ]; then
+    print -Pn "\e]0;${JOU_MANUAL_TITLE//\%/%%}\a"
+  else
+    short_pwd="$(abbreviated_pwd)"
+    print -Pn "\e]1;%m:${$(last_path_component "$short_pwd")//\%/%%}\a"
+    print -Pn "\e]2;%m:${short_pwd//\%/%%}\a"
+  fi
+}
+
+case $TERM in
+    xterm*)
+        print_title
+        precmd () { print_title }
+        ;;
+esac
