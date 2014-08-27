@@ -120,9 +120,6 @@
 [submodule "sublime3/Packages/MarkdownEditing"]
 	path = sublime3/Packages/MarkdownEditing
 	url = git://github.com/ttscoff/MarkdownEditing.git
-[submodule "sublime3/Packages/RubyTest"]
-	path = sublime3/Packages/RubyTest
-	url = git://github.com/maltize/sublime-text-2-ruby-tests.git
 [submodule "sublime3/Packages/Dictionaries"]
 	path = sublime3/Packages/Dictionaries
 	url = git://github.com/SublimeText/Dictionaries.git
