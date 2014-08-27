@@ -8,6 +8,9 @@ scss=.scss
 sass=.sass
 
 --type-set
+less=.less
+
+--type-set
 haml=.haml
 
 --type-set
@@ -27,6 +30,9 @@ podspec=.podspec
 
 --type-add
 podfile=Podfile
+
+--type-add
+twig=.twig
 
 --pager
 /usr/bin/less -R
