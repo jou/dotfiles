@@ -126,9 +126,6 @@
 [submodule "sublime3/Packages/Dictionaries"]
 	path = sublime3/Packages/Dictionaries
 	url = git://github.com/SublimeText/Dictionaries.git
-[submodule "sublime3/Packages/Carto"]
-	path = sublime3/Packages/Carto
-	url = git://github.com/yohanboniface/Carto-sublime.git
 [submodule "sublime3/Packages/Solr"]
 	path = sublime3/Packages/Solr
 	url = git://github.com/jou/SublimeSolr.git
