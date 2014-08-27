@@ -4,15 +4,17 @@
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
 	"dictionary": "Packages/Dictionaries/German_de_DE.dic",
 	"draw_white_space": "selection",
-	"font_size": 16,
+	"font_face": "Source Code Pro",
+	"font_options": ["no_italic"],
+	"font_size": 14,
 	"ignored_packages":
 	[
 		"Markdown"
 	],
 	"scroll_past_end": true,
+	"show_encoding": true,
 	"show_full_path": true,
 	"translate_tabs_to_spaces": true,
 	"vintage_start_in_command_mode": true,
-	"vintage_use_clipboard": true,
-	"show_encoding": true
+	"vintage_use_clipboard": true
 }
