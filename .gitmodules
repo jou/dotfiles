@@ -145,3 +145,6 @@
 [submodule "sublime3/Packages/EditorConfig"]
 	path = sublime3/Packages/EditorConfig
 	url = https://github.com/sindresorhus/editorconfig-sublime.git
+[submodule "sublime3/Packages/Emmet"]
+	path = sublime3/Packages/Emmet
+	url = https://github.com/sergeche/emmet-sublime.git
