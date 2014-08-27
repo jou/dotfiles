@@ -145,3 +145,9 @@
 [submodule "sublime3/Packages/Emmet"]
 	path = sublime3/Packages/Emmet
 	url = https://github.com/sergeche/emmet-sublime.git
+[submodule "sublime3/Packages/LESS"]
+	path = sublime3/Packages/LESS
+	url = https://github.com/danro/LESS-sublime.git
+[submodule "sublime3/Packages/Handlebars"]
+	path = sublime3/Packages/Handlebars
+	url = https://github.com/daaain/Handlebars.git
