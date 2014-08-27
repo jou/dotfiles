@@ -1,0 +1,43 @@
+#compdef i2cssh
+
+_i2cssh() {
+    local curcontext="$curcontext" state line
+    typeset -A opt_args
+
+    local clusters; clusters=("${(@f)$(ruby -ryaml -e 'print YAML.load(ARGF)["clusters"].keys.join("\n")' ~/.i2csshrc)}")
+
+    _arguments -C -s -S -n \
+        '(-c --cluster)'{-c+,--cluster=}'[CLUSTERNAME Name of the cluster specified in ~/.i2csshrc]:cluster:->clusters' \
+        '(-m --machines)'{-m+,--machines=}'[a,b,c Comma-separated list of hosts]' \
+        '(-f --file)'{-f+,--file=}'[FILE Cluster file (one hostname per line)]:file:_files' \
+        '(-A --forward-agent)'{-A,--forward-agent}'[Enable SSH agent forwarding]' \
+        '(-l --login)'{-l+,--login=}'[LOGIN SSH login name]' \
+        '(-e --environment)'{-e+,--environment=}'[KEY=VAL Send environment vars (comma-separated list, need to start with LC_)]' \
+        '(-r --rank)'{-r,--rank}'[Send LC_RANK with the host number as environment variable]' \
+        '(-F --fullscreen)'{-F,--fullscreen}'[Make the window fullscreen]' \
+        '(-C --columns)'{-C+,--columns=}'[COLUMNS Number of columns (rows will be calculated)]' \
+        '(-R --rows)'{-R+,--rows=}'[ROWS Number of rows (columns will be calculated)]' \
+        '(-b --broadcast)'{-b,--broadcast}'[Start with broadcast input (DANGEROUS!)]' \
+        '(-n --nobroadcastb)'{-n,--nobroadcastb}'[ Disable broadcast]' \
+        '(-p --profile)'{-p+,--profile=}'[PROFILE Name of the iTerm2 profile (default: Default)]' \
+        '(-2 --iterm2)'{-2,--iterm2}'[Use iTerm2 instead of iTerm]' \
+        '(-i --itermname)'{-i+,--itermname=}'[NAME Name of the application to use (default: iTerm)]' \
+        '(-s --sleep)'{-s+,--sleep=}'[SLEEP Number of seconds to sleep between creating SSH sessions]' \
+        '(-d --direction)'{-d+,--direction=}'[DIRECTION Direction that new sessions are created (default: column)]' \
+        '(-X --extra)'{-X+,--extra=}'[EXTRA_PARAM Additional ssh parameters (e.g. -Xi=myidentity.pem)]' \
+        '*: :->args'
+
+    case $state in
+        args)
+            for cluster in $clusters; do
+                compadd "$@" $cluster
+            done
+            _hosts
+            ;;
+        clusters)
+            _describe -t 'clusters' 'cluster' clusters
+            ;;
+    esac
+}
+
+_i2cssh "$@"
