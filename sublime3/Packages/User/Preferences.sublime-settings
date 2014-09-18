@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"auto_match_enabled": false,
-	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
+	"color_scheme": "Packages/Solarized (Custom)/Solarized (Light).tmTheme",
 	"dictionary": "Packages/Dictionaries/German_de_DE.dic",
 	"draw_white_space": "selection",
 	"font_face": "Source Code Pro",
