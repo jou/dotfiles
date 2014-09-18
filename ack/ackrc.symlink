@@ -19,6 +19,12 @@ coffee=.coffee
 --type-set
 zsh=.zsh
 
+--type-set
+swift=.swift
+
+--type-set
+proto=.proto
+
 --type-add
 ruby=.ru
 
