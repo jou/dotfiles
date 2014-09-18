@@ -17,6 +17,7 @@
 .idea
 .idea_modules
 *.iml
+*.iws
 
 .vagrant
 .svn
