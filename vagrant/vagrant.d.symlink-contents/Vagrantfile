@@ -1,0 +1,6 @@
+Vagrant.configure("2") do |config|
+  config.vm.provider "vmware_fusion" do |vmware|
+    vmware.vmx["usb.generic.pluginAction"] = "host"
+    vmware.vmx["usb.generic.autoconnect"] = "FALSE"
+  end
+end
